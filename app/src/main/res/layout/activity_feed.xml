@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTertiary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bg"
+                android:paddingLeft="@dimen/m45"
+                android:paddingRight="@dimen/m45">
+
+                <SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:fadeScrollbars="false"
+                    android:fadingEdge="horizontal" />
+            </RelativeLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m130"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/m20"
+                android:background="@color/colorSecondary"
+                android:onClick="favourateClick"
+                android:text="My Favourate"
+                android:textColor="@color/colorPrimary" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/m10"
+                android:paddingBottom="@dimen/m60" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fqTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/feed_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/alert_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/profile_fade" />
+    </android.support.design.widget.TabLayout>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2699FB</color>
+    <color name="colorPrimaryDark">#2699FB</color>
+    <color name="colorAccent">@color/colorSecondary</color>
+
+    <color name="colorSecondary">#7FC4FD</color>
+    <color name="colorTertiary">#BCE0FD</color>
+    <color name="notification_pop">#FC7F03</color>
+    <color name="white">@android:color/white</color>
+    <color name="transparent">@android:color/transparent</color>
+</resources>

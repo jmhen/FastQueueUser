@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tab_height">50dp</dimen>
+    <dimen name="item_height">60dp</dimen>
+    <dimen name="m10">10dp</dimen>
+    <dimen name="m20">20dp</dimen>
+    <dimen name="m45">45dp</dimen>
+    <dimen name="m60">60dp</dimen>
+    <dimen name="m90">90dp</dimen>
+    <dimen name="m130">130dp</dimen>
+    <dimen name="m200">200dp</dimen>
+
+    //container size
+    <dimen name="collector_height">100dp</dimen>
+
+    //text size
+    <dimen name="standard_font_size">12sp</dimen>
+    <dimen name="font_size_medium">15sp</dimen>
+    <dimen name="font_size_big">18sp</dimen>
+    <dimen name="font_size_very_big">36sp</dimen>
+</resources>

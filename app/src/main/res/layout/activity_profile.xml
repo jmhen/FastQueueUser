@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTertiary"
+                app:srcCompat="@drawable/photo"
+                android:contentDescription="TODO" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m60"
+                android:layout_marginBottom="@dimen/m10"
+                android:animateLayoutChanges="false"
+                android:animationCache="false"
+                android:background="@color/colorSecondary"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/m10"
+                android:paddingStart="@dimen/m60"
+                android:paddingEnd="@dimen/m20">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="@string/sample_username"
+                    android:textColor="@color/white"
+                    android:textColorLink="@color/white"
+                    android:textSize="@dimen/font_size_big"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/edit"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/m20"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:drawableStart="@drawable/ic_setting"
+                android:drawablePadding="@dimen/m20"
+                android:text="@string/settings"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:drawableStart="@drawable/ic_help"
+                android:drawablePadding="@dimen/m20"
+                android:text="@string/help"
+                android:textColor="@color/colorPrimary"
+                android:textColorLink="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fqTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/feed_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/alert_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/profile_fade" />
+    </android.support.design.widget.TabLayout>
+
+</RelativeLayout>

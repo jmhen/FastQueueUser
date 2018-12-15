@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/collector_height"
+    android:layout_margin="@dimen/m10"
+    android:background="@drawable/rounded_bg"
+    android:paddingLeft="@dimen/m60">
+
+    <TextView
+        android:id="@+id/food_name_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/m20"
+        android:layout_marginBottom="@dimen/m10"
+        android:text="TextView"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/store_name_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name_collect"
+        android:text="TextView"
+        android:textColor="@color/colorSecondary" />
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@+id/store_name_collect"
+        android:layout_marginRight="@dimen/m60"
+        android:background="@color/colorTertiary" />
+
+    <TextView
+        android:id="@+id/date_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider_line"
+        android:text="TextView"
+        android:textColor="@android:color/darker_gray" />
+
+</RelativeLayout>

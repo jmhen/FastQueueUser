@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTertiary">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/notification_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/collect_list_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collect List" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/order_history_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order history" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/collect_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fqTab"
+        android:layout_below="@+id/notification_tab"
+        android:layout_margin="@dimen/m10" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fqTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/feed_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/alert_fade" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:icon="@drawable/profile_fade" />
+    </android.support.design.widget.TabLayout>
+
+</RelativeLayout>
