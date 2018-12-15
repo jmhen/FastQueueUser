@@ -16,6 +16,7 @@
 
 package fq.campus.common.recyclerview;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import fq.campus.R;
+import fq.campus.ViewStoreActivity;
 
 /**
  * Provide views to RecyclerView with data from mDataSet.
@@ -48,12 +50,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             super(v);
             // Define click listener for the ViewHolder's View.
             name = (TextView) v.findViewById(R.id.item_name);
-            name.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
-                 }
-            });
+
 
         }
 
@@ -90,12 +87,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         Log.d(TAG, "Element " + position + " set.");
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
         viewHolder.getTextView().setText(mDataSet.get(position).getString());
+        viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToViewStore = new Intent(v.getContext(), ViewStoreActivity.class);
+                goToViewStore.putExtra("storeName",mDataSet.get(position).getString());
+                v.getContext().startActivity(goToViewStore);
+            }
+        });
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)
 

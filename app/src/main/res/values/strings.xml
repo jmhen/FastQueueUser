@@ -32,4 +32,6 @@
     <string name="help">Help</string>
     <string name="profile_title">Profile</string>
     <string name="notification_title">Notifications</string>
+    <string name="no_content">No data retrieved</string>
+    <string name="loading_store_list">Retrieving store list</string>
 </resources>
