@@ -23,7 +23,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -45,19 +47,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
+        private RelativeLayout store_cell;
 
         public ViewHolder(View v) {
             super(v);
             // Define click listener for the ViewHolder's View.
             name = (TextView) v.findViewById(R.id.item_name);
+            store_cell = (RelativeLayout) v.findViewById(R.id.store_cell);
+            store_cell.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     Intent goToViewStore = new Intent(v.getContext(), ViewStoreActivity.class);
+                     goToViewStore.putExtra("storeName",name.getText());
+                     v.getContext().startActivity(goToViewStore);
+                     Toast.makeText(v.getContext(),R.string.store_clicked,Toast.LENGTH_SHORT).show();
+                 }
 
+            });
 
         }
+        public TextView getTextView(){ return name;}
 
-        public TextView getTextView() {
-            return name;
         }
-    }
     // END_INCLUDE(recyclerViewSampleViewHolder)
 
     /**
@@ -87,20 +98,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Log.d(TAG, "Element " + position + " set.");
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
         viewHolder.getTextView().setText(mDataSet.get(position).getString());
-        viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToViewStore = new Intent(v.getContext(), ViewStoreActivity.class);
-                goToViewStore.putExtra("storeName",mDataSet.get(position).getString());
-                v.getContext().startActivity(goToViewStore);
-            }
-        });
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)
 

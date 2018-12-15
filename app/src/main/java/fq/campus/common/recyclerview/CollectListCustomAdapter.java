@@ -69,6 +69,7 @@ public class CollectListCustomAdapter extends RecyclerView.Adapter<CollectListCu
         }
         public TextView getTextViewStore() {return store_name;}
         public TextView getTextViewDate() {return order_date;}
+
     }
     // END_INCLUDE(recyclerViewSampleViewHolder)
 
@@ -101,6 +102,7 @@ public class CollectListCustomAdapter extends RecyclerView.Adapter<CollectListCu
         holder.getTextViewFood().setText(mDataSet.get(position).getFood());
         holder.getTextViewStore().setText(mDataSet.get(position).getStore());
         holder.getTextViewDate().setText(mDataSet.get(position).getDate());
+
     }
 
     @Override
